@@ -9,14 +9,15 @@
  *
  * @author frc
  */
-class JoyDriveCommand: public CommandBase {
+class JoyDriveCommand: public CommandBase
+{
 public:
-	JoyDriveCommand();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+    JoyDriveCommand();
+    virtual void Initialize();
+    virtual void Execute();
+    virtual bool IsFinished();
+    virtual void End();
+    virtual void Interrupted();
 };
 
 #endif

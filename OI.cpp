@@ -1,9 +1,10 @@
 #include "OI.h"
 
-OI::OI() {
+OI::OI()
+{
     // Use a controller.
-    #include "xbox.controller"
-    
+#include "Joysticks/xbox.controller"
+
     // Process operator interface input here.
-    
+
 }

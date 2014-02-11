@@ -17,11 +17,15 @@
 #define RIGHTMOVE1 3
 #define RIGHTMOVE2 4
 
+#define CATAPULT_MODULE 3
+#define CATAPULT_FORWARDRELAY 1
+#define CATAPULT_REVERSERELAY 2
+
 // If you are using multiple modules, make sure to define both the port
 // number and the module. For example you with a rangefinder:
 // #define RANGE_FINDER_PORT 1
 // #define RANGE_FINDER_MODULE 1
 
-#include "xbox.controller_"
+#include "Joysticks/xbox.controller_"
 
 #endif

@@ -1,0 +1,17 @@
+// 2 joysticks
+leftjoy = new Joystick(1);
+rightjoy = new Joystick(2);
+
+// Implement joystick buttons
+button1    = new JoystickButton(rightjoy, 1);
+buttonSlow = new JoystickButton(rightjoy, 2);
+button3    = new JoystickButton(rightjoy, 3);
+button4    = new JoystickButton(rightjoy, 4);
+button5    = new JoystickButton(rightjoy, 5);
+button6    = new JoystickButton(rightjoy, 6);
+button7    = new JoystickButton(rightjoy, 7);
+button8    = new JoystickButton(rightjoy, 8);
+button9    = new JoystickButton(rightjoy, 9);
+button0    = new JoystickButton(rightjoy, 10);
+
+#include "2joy.controller_"

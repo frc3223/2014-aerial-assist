@@ -1,0 +1,16 @@
+// Xbox 360 controller
+xbox = new Joystick(1);
+
+// Implement Xbox 360 controller buttons
+button1    = new JoystickButton(xbox, 1);  // a
+buttonSlow = new JoystickButton(xbox, 2);  // b
+button3    = new JoystickButton(xbox, 3);  // x
+button4    = new JoystickButton(xbox, 4);  // y
+button5    = new JoystickButton(xbox, 5);  // left bumper
+button6    = new JoystickButton(xbox, 6);  // right bumper
+button7    = new JoystickButton(xbox, 7);  // back
+button8    = new JoystickButton(xbox, 8);  // start
+button9    = new JoystickButton(xbox, 9);  // left joy
+button0    = new JoystickButton(xbox, 10); // right joy
+
+#include "xbox.controller_"

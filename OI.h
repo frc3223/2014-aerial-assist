@@ -4,11 +4,12 @@
 #include "WPILib.h"
 #include "Robotmap.h"
 
-class OI {
+class OI
+{
 private:
 public:
     OI();
-    JOYSTICK_H
+    JOYSTICK_H;
     JoystickButton *button1;
     JoystickButton *button2;
     JoystickButton *button3;
@@ -19,7 +20,7 @@ public:
     JoystickButton *button8;
     JoystickButton *button9;
     JoystickButton *button0;
-    
+
     JoystickButton *buttonSlow;
 };
 
