@@ -12,10 +12,10 @@
 // following variables to use with your drivetrain subsystem.
 // #define LEFTMOTOR 1
 // #define RIGHTMOTOR 2
-#define LEFTMOVE1  1
-#define LEFTMOVE2  2
-#define RIGHTMOVE1 3
-#define RIGHTMOVE2 4
+#define LEFTDRIVE1_NEW  (new Jaguar(1))
+#define LEFTDRIVE2_NEW  (new Jaguar(2))
+#define RIGHTDRIVE1_NEW (new Jaguar(3))
+#define RIGHTDRIVE2_NEW (new Jaguar(4))
 
 #define CATAPULT_MODULE 3
 #define CATAPULT_FORWARDRELAY 1

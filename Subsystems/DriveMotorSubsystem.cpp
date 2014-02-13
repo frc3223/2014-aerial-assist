@@ -1,15 +1,17 @@
 #include "DriveMotorSubsystem.h"
 #include "../Robotmap.h"
 #include "../Commands/JoyDriveCommand.h"
-#include "../DualSpeedController.h"
+#include "../Lib/DualSpeedController.h"
 
 DriveMotorSubsystem::DriveMotorSubsystem() :
     Subsystem("DriveMotorSubsystem")
 {
-    leftDrive
-            = new DualSpeedController(new Jaguar(LEFTMOVE1),new Jaguar(LEFTMOVE2)); // Sets up the left side
-    rightDrive
-            = new DualSpeedController(new Jaguar(RIGHTMOVE1),new Jaguar(RIGHTMOVE2)); // Sets up the right side
+    leftDrive1 = LEFTDRIVE1_NEW;
+    leftDrive2 = LEFTDRIVE2_NEW;
+    leftDrive = new DualSpeedController(leftDrive1,leftDrive2); // Sets up the left side
+    rightDrive1 = RIGHTDRIVE1_NEW;
+    rightDrive2 = RIGHTDRIVE2_NEW;
+    rightDrive = new DualSpeedController(rightDrive1,rightDrive2); // Sets up the right side
     moveDrive = new RobotDrive(leftDrive,rightDrive); // Sets up the drive system
 }
 

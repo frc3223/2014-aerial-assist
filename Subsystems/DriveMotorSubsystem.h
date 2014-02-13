@@ -11,7 +11,11 @@ class DriveMotorSubsystem: public Subsystem {
 private:
     // It's desirable that everything possible under private except
     // for methods that implement subsystem capabilities
+    SpeedController *leftDrive1;
+    SpeedController *leftDrive2;
     SpeedController *leftDrive;
+    SpeedController *rightDrive1;
+    SpeedController *rightDrive2;
     SpeedController *rightDrive;
     RobotDrive *moveDrive;
 public:
