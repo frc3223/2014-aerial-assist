@@ -14,10 +14,12 @@
     SENSOR_encoder_GET_1(name,##__VA_ARGS__),\
     SENSOR_encoder_GET_0(name,##__VA_ARGS__))
 
+// thing can be DistancePerPulse, MaxPeriod, MinRate, PIDSourceParameter, ReverseDirection, or SamplesToAverage
 #define SENSOR_encoder_SET(name,thing,...) (OI_VAR->encoder_##name->Set##thing(__VA_ARGS__))
 
 // Extra stuff to be called by SENSOR_CUSTOM
-#define SENSOR_encoder_Reset(name) (OI_VAR->encoder_##name->Reset())
-#define SENSOR_encoder_Stop(name) (OI_VAR->encoder_##name->Stop())
+#define SENSOR_encoder_Reset(name) do { OI_VAR->encoder_##name->Reset(); } while (0)
+#define SENSOR_encoder_Start(name) do { OI_VAR->encoder_##name->Start(); } while (0)
+#define SENSOR_encoder_Stop(name) do { OI_VAR->encoder_##name->Stop(); } while (0)
 
 #endif

@@ -16,7 +16,7 @@
 
 #define ANALOG_MODULE                1
 #define DIGITAL_MODULE               1
-#define PNUMATICS_MODULE             2
+#define SOLENOID_MODULE              1
 
 #define JAGUAR_1_CHANNEL             3
 #define JAGUAR_2_CHANNEL             4
@@ -43,20 +43,22 @@
 #define MOTOR_arm_TYPE               Talon
 #define ARM_SWITCH_MODULE            DIGITAL_MODULE
 #define digitalin_arm_top_MODULE     ARM_SWITCH_MODULE
-#define digitalin_arm_top_CHANNEL    3
+#define digitalin_arm_top_CHANNEL    2
 #define digitalin_arm_bot_MODULE     ARM_SWITCH_MODULE
-#define digitalin_arm_bot_CHANNEL    2
+#define digitalin_arm_bot_CHANNEL    3
 
 #define COMPRESSOR_RELAY_MODULE      DIGITAL_MODULE
-#define COMPRESSOR_RELAY_CHANNEL     1
+#define COMPRESSOR_RELAY_CHANNEL     2
 #define digitalin_compressor_MODULE  DIGITAL_MODULE
-#define digitalin_compressor_CHANNEL 3
+#define digitalin_compressor_CHANNEL 1
 
-#define CATAPULT_MODULE              PNUMATICS_MODULE
+#define CATAPULT_MODULE              SOLENOID_MODULE
 #define CATAPULT_1_FORWARD_CHANNEL   3 // Prime
 #define CATAPULT_1_REVERSE_CHANNEL   4 // Retract
 #define CATAPULT_2_FORWARD_CHANNEL   5 // Lock
 #define CATAPULT_2_REVERSE_CHANNEL   6 // Fire
+#define digitalin_catapult_MODULE    DIGITAL_MODULE
+#define digitalin_catapult_CHANNEL   6
 
 #include "Lib/Sensor.h"
 #include "sensor/gyro"

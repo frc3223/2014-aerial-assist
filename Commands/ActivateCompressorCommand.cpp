@@ -21,13 +21,14 @@ void ActivateCompressorCommand::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool ActivateCompressorCommand::IsFinished()
 {
-    return !(SENSOR_GET(digitalin,compressor));
+    return (!SENSOR_GET(digitalin,compressor));
 }
 
 // Called once after isFinished returns true
 void ActivateCompressorCommand::End()
 {
     compressorsubsystem->Stop();
+    printf("Compressor full.\n");
 }
 
 // Called when another command which requires one or more of the same

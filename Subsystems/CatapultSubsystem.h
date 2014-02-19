@@ -13,15 +13,18 @@ class CatapultSubsystem: public Subsystem
 private:
     // It's desirable that everything possible under private except
     // for methods that implement subsystem capabilities
-    Relay *forward1Relay;
-    Relay *reverse1Relay;
-    Relay *forward2Relay;
-    Relay *reverse2Relay;
+    Solenoid *forward1Solenoid;
+    Solenoid *reverse1Solenoid;
+    Solenoid *forward2Solenoid;
+    Solenoid *reverse2Solenoid;
 public:
     CatapultSubsystem();
     void InitDefaultCommand();
-    Relay::Value Get(Relay::Value value,int number);
-    void Set(Relay::Value value,int number = 1);
+    enum CylinderType
+    {
+        big = 1, little = 0
+    };
+    void Set(CatapultSubsystem::CylinderType type,Relay::Value value);
 };
 
 #endif

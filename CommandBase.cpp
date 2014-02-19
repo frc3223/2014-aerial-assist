@@ -14,6 +14,7 @@ CommandBase::CommandBase() :
 // Initialize a single static instance of all of your subsystems to NULL
 SUBINIT(DriveMotorSubsystem,drivemotorsubsystem);
 SUBINIT(CompressorSubsystem,compressorsubsystem);
+SUBINIT(CatapultSubsystem,catapultsubsystem);
 SUBINIT(ArmSubsystem,armsubsystem);
 SUBINIT(OI,OI_VAR);
 
@@ -23,6 +24,7 @@ void CommandBase::init()
     // line should be repeated for each subsystem in the project.
     drivemotorsubsystem = new DriveMotorSubsystem();
     compressorsubsystem = new CompressorSubsystem();
+    catapultsubsystem = new CatapultSubsystem();
     armsubsystem = new ArmSubsystem();
 
     OI_VAR = new OI();

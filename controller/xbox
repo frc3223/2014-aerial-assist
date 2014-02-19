@@ -2,14 +2,14 @@
 xbox = new Joystick(1);
 
 // Implement Xbox 360 controller buttons
-buttonFire     = new JoystickButton(xbox, 1);  // a
+button1        = new JoystickButton(xbox, 1);  // a
 buttonSlow     = new JoystickButton(xbox, 2);  // b
-buttonLock     = new JoystickButton(xbox, 3);  // x
+button3        = new JoystickButton(xbox, 3);  // x
 buttonCompress = new JoystickButton(xbox, 4);  // y
 buttonArmDown  = new JoystickButton(xbox, 5);  // left bumper
 buttonArmUp    = new JoystickButton(xbox, 6);  // right bumper
-buttonPrime    = new JoystickButton(xbox, 7);  // back
-buttonRetract  = new JoystickButton(xbox, 8);  // start
+button7        = new JoystickButton(xbox, 7);  // back
+buttonFire     = new JoystickButton(xbox, 8);  // start
 button9        = new JoystickButton(xbox, 9);  // left joy
 button0        = new JoystickButton(xbox, 10); // right joy
 

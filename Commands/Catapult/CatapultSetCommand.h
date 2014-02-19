@@ -1,5 +1,5 @@
-#ifndef CATAPULTLOCKCOMMAND_H
-#define CATAPULTLOCKCOMMAND_H
+#ifndef CATAPULTSETCOMMAND_H
+#define CATAPULTSETCOMMAND_H
 
 #include "../../CommandBase.h"
 #include "../../Robotmagic.h"
@@ -9,9 +9,9 @@
  *
  * @author frc
  */
-class CatapultLockCommand: public CommandBase {
+class CatapultSetCommand: public CommandBase {
 public:
-	CatapultLockCommand();
+	CatapultSetCommand();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

@@ -3,6 +3,7 @@
 
 #include "Subsystems/DriveMotorSubsystem.h"
 #include "Subsystems/CompressorSubsystem.h"
+#include "Subsystems/CatapultSubsystem.h"
 #include "Subsystems/ArmSubsystem.h"
 #include "OI.h"
 #include "Robotmagic.h"
@@ -21,6 +22,7 @@ public:
     // Create a single static instance of all of your subsystems
     static DriveMotorSubsystem *drivemotorsubsystem;
     static CompressorSubsystem *compressorsubsystem;
+    static CatapultSubsystem *catapultsubsystem;
     static ArmSubsystem *armsubsystem;
     static OI *OI_VAR;
 };

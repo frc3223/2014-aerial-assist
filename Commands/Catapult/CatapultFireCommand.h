@@ -9,14 +9,15 @@
  *
  * @author frc
  */
-class CatapultFireCommand: public CommandBase {
+class CatapultFireCommand: public CommandBase
+{
 public:
-	CatapultFireCommand();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+    CatapultFireCommand();
+    virtual void Initialize();
+    virtual void Execute();
+    virtual bool IsFinished();
+    virtual void End();
+    virtual void Interrupted();
 };
 
 #endif

@@ -26,15 +26,13 @@ public:
     JoystickButton *buttonCompress;
     JoystickButton *buttonArmUp;
     JoystickButton *buttonArmDown;
-    JoystickButton *buttonPrime;
-    JoystickButton *buttonRetract;
-    JoystickButton *buttonLock;
     JoystickButton *buttonFire;
 
     SENSOR_OI_H(gyro,gyro);
     SENSOR_OI_H(digitalin,compressor);
     SENSOR_OI_H(digitalin,arm_top);
     SENSOR_OI_H(digitalin,arm_bot);
+    SENSOR_OI_H(digitalin,catapult);
 };
 
 #endif
