@@ -1,14 +1,14 @@
-#ifndef DUALSPEED_H
-#define DUALSPEED_H
+#ifndef DUALSPEED_3223_H
+#define DUALSPEED_3223_H
 
 #include "WPILib.h"
 
-class DualSpeedController : public SpeedController
+class DualSpeedController: public SpeedController
 {
 public:
-    DualSpeedController(SpeedController *motor1, SpeedController *motor2);
+    DualSpeedController(SpeedController *motor1,SpeedController *motor2);
     virtual ~DualSpeedController();
-    virtual void Set(float value, uint8_t syncGroup=0);
+    virtual void Set(float value,uint8_t syncGroup = 0);
     virtual float Get();
     virtual void Disable();
 

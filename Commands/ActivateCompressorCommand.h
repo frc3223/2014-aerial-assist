@@ -1,5 +1,5 @@
-#ifndef JOYDRIVECOMMAND_H
-#define JOYDRIVECOMMAND_H
+#ifndef ACTIVATECOMPRESSORCOMMAND_H
+#define ACTIVATECOMPRESSORCOMMAND_H
 
 #include "../CommandBase.h"
 #include "../Robotmagic.h"
@@ -9,10 +9,10 @@
  *
  * @author frc
  */
-class JoyDriveCommand: public CommandBase
+class ActivateCompressorCommand: public CommandBase
 {
 public:
-    JoyDriveCommand();
+    ActivateCompressorCommand();
     virtual void Initialize();
     virtual void Execute();
     virtual bool IsFinished();

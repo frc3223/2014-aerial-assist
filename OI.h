@@ -2,13 +2,14 @@
 #define OI_H
 
 #include "WPILib.h"
-#include "Robotmap.h"
+#include "Robotmagic.h"
 
 class OI
 {
 private:
 public:
     OI();
+
     JOYSTICK_H;
     JoystickButton *button1;
     JoystickButton *button2;
@@ -22,6 +23,18 @@ public:
     JoystickButton *button0;
 
     JoystickButton *buttonSlow;
+    JoystickButton *buttonCompress;
+    JoystickButton *buttonArmUp;
+    JoystickButton *buttonArmDown;
+    JoystickButton *buttonPrime;
+    JoystickButton *buttonRetract;
+    JoystickButton *buttonLock;
+    JoystickButton *buttonFire;
+
+    SENSOR_OI_H(gyro,gyro);
+    SENSOR_OI_H(digitalin,compressor);
+    SENSOR_OI_H(digitalin,arm_top);
+    SENSOR_OI_H(digitalin,arm_bot);
 };
 
 #endif

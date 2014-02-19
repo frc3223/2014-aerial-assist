@@ -14,4 +14,4 @@ button8    = new JoystickButton(rightjoy, 8);
 button9    = new JoystickButton(rightjoy, 9);
 button0    = new JoystickButton(rightjoy, 10);
 
-#include "2joy.controller_"
+#include "2joy_"

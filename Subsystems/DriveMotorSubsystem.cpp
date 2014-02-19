@@ -1,18 +1,11 @@
 #include "DriveMotorSubsystem.h"
-#include "../Robotmap.h"
 #include "../Commands/JoyDriveCommand.h"
-#include "../Lib/DualSpeedController.h"
 
 DriveMotorSubsystem::DriveMotorSubsystem() :
     Subsystem("DriveMotorSubsystem")
 {
-    leftDrive1 = LEFTDRIVE1_NEW;
-    leftDrive2 = LEFTDRIVE2_NEW;
-    leftDrive = new DualSpeedController(leftDrive1,leftDrive2); // Sets up the left side
-    rightDrive1 = RIGHTDRIVE1_NEW;
-    rightDrive2 = RIGHTDRIVE2_NEW;
-    rightDrive = new DualSpeedController(rightDrive1,rightDrive2); // Sets up the right side
-    moveDrive = new RobotDrive(leftDrive,rightDrive); // Sets up the drive system
+    moveDrive = new RobotDrive(new DualSpeedController(NEWMOTOR(left1),NEWMOTOR(left2)),
+            new DualSpeedController(NEWMOTOR(right1),NEWMOTOR(right2))); // Sets up the drive system
 }
 
 void DriveMotorSubsystem::InitDefaultCommand()
@@ -40,10 +33,10 @@ void DriveMotorSubsystem::TankDrive(float leftValue,float rightValue,bool square
     moveDrive->TankDrive(leftValue,rightValue,squaredInputs);
 }
 
-/// Stops the motors.
-void DriveMotorSubsystem::Stop()
+/// Atomic move-rotate for easy autonomous control.
+void DriveMotorSubsystem::MoveRotate(double distance,double radAngle)
 {
-    moveDrive->Drive(0,0);
+
 }
 
 // Put methods for controlling this subsystem

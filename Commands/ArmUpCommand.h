@@ -1,5 +1,5 @@
-#ifndef JOYDRIVECOMMAND_H
-#define JOYDRIVECOMMAND_H
+#ifndef ARMUPCOMMAND_H
+#define ARMUPCOMMAND_H
 
 #include "../CommandBase.h"
 #include "../Robotmagic.h"
@@ -9,10 +9,10 @@
  *
  * @author frc
  */
-class JoyDriveCommand: public CommandBase
+class ArmUpCommand: public CommandBase
 {
 public:
-    JoyDriveCommand();
+    ArmUpCommand();
     virtual void Initialize();
     virtual void Execute();
     virtual bool IsFinished();

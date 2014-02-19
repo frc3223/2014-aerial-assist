@@ -7,9 +7,11 @@
                 <stringAttribute value="PROJECT_TYPE"/>
                 <stringAttribute value="DEFINES"/>
                 <stringAttribute value="EXPAND_DBG"/>
+                <stringAttribute value="OPENCV_DIR"/>
             </listAttribute>
             <stringAttribute key="BLD::Info|GlobalMacro|DEFINES" value=""/>
             <stringAttribute key="BLD::Info|GlobalMacro|EXPAND_DBG" value="0"/>
+            <stringAttribute key="BLD::Info|GlobalMacro|OPENCV_DIR" value="C:/Users/frc/opencv/build/x64/vc12"/>
             <stringAttribute key="BLD::Info|GlobalMacro|PROJECT_TYPE" value="DKM"/>
             <listAttribute key="BLD::Info|Incl|PPC32diab">
                 <stringAttribute value="-I$(WIND_BASE)/target/h/WPILib"/>
@@ -246,12 +248,12 @@
     <buildtargets>
         <buildtarget buildtool="Linker" name="CommandBasedRobotTemplate" passed="false" targetname="CommandBasedRobotTemplate">
             <contents>
-                <buildtargetreference name="/AerialAscentRobot/CommandBasedRobotTemplate_partialImage"/>
+                <buildtargetreference name="/AerialAssistRobot/CommandBasedRobotTemplate_partialImage"/>
             </contents>
         </buildtarget>
         <buildtarget buildtool="Partial Image Linker" name="CommandBasedRobotTemplate_partialImage" passed="true" targetname="CommandBasedRobotTemplate_partialImage">
             <contents>
-                <folder name="/AerialAscentRobot" recursive="true"/>
+                <folder name="/AerialAssistRobot" recursive="true"/>
             </contents>
         </buildtarget>
     </buildtargets>
