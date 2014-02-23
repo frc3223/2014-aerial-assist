@@ -1,4 +1,4 @@
-#include "CatapultFireCommand.h"
+#include "FireCommand.h"
 
 CatapultFireCommand::CatapultFireCommand()
 {

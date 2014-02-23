@@ -1,5 +1,5 @@
 #include "CatapultSubsystem.h"
-#include "../Commands/Catapult/CatapultSetCommand.h"
+#include "../Commands/Catapult/SetCommand.h"
 
 CatapultSubsystem::CatapultSubsystem() :
     Subsystem("CatapultSubsystem")

@@ -1,0 +1,12 @@
+#ifndef SENSOR_3223_JOYSTICKjoystickbutton
+#define SENSOR_3223_JOYSTICKjoystickbutton
+
+#include "../Lib/Preprocessor.h"
+
+// Varidic SENSOR_joystickbutton_GET (meditate upon http://stackoverflow.com/a/8814003 if confused)
+// type can be AnalogTriggerForRouting, Channel, ChannelForRouting, ModuleForRouting, SmartDashboardType, or Table
+#define SENSOR_joystickbutton_GET(name) (OI_VAR->joystickbutton_##name->Get())
+
+#define SENSOR_joystickbutton_does(name,thing,...) (joystickbutton_##name->thing(__VA_ARGS__))
+
+#endif

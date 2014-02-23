@@ -1,0 +1,22 @@
+#! /bin/bash
+
+##### Project-specific ucpp settings #####
+
+# Workspace root directory
+export CPP_PROJECT_WS_ROOT_DIR="/home/brayden/code/frc"
+
+# Project name
+export CPP_PROJECT_NAME="2014-aerial-assist"
+
+# Project root directory
+export CPP_PROJECT_ROOT_DIR="/home/brayden/code/frc/2014-aerial-assist"
+# IP to deploy robot code
+export DEPLOY_IP=10.32.23.2
+# Default configure method for "ucpp configure"
+#   Possible values: py, winpy, wr
+# Comment out to use global settings
+# Leave blank to print a help message
+#DEFAULT_CONFIGURE_COMMAND=
+
+export HAVE_CPP_PROJECT=yes
+

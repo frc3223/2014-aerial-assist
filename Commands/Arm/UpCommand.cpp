@@ -1,4 +1,4 @@
-#include "ArmUpCommand.h"
+#include "UpCommand.h"
 
 ArmUpCommand::ArmUpCommand()
 {

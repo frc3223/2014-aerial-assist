@@ -1,4 +1,4 @@
-#include "ArmDownCommand.h"
+#include "DownCommand.h"
 
 ArmDownCommand::ArmDownCommand()
 {

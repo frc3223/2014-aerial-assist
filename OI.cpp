@@ -6,8 +6,8 @@
 
 OI::OI()
 {
-    // Use a controller.
-#include "controller/xbox"
+    // Use a joystick.
+    SENSOR_OI_H(joystick,main);
 
     // Use sensors.
     SENSOR_OI(gyro,gyro);
@@ -17,8 +17,8 @@ OI::OI()
     SENSOR_OI(digitalin,catapult);
 
     // Process operator interface input here.
-    buttonCompress->WhileHeld(new ActivateCompressorCommand());
-    buttonArmUp->WhileHeld(new ArmUpCommand());
-    buttonArmDown->WhileHeld(new ArmDownCommand());
-    buttonFire->WhenPressed(new CatapultFireCommand());
+    SENSOR_CUSTOM(joystickbutton,Compress,does,WhileHeld,new ActivateCompressorCommand());
+    SENSOR_CUSTOM(joystickbutton,ArmUp,does,WhileHeld,new ArmUpCommand());
+    SENSOR_CUSTOM(joystickbutton,ArmDown,does,WhileHeld,new ArmDownCommand());
+    SENSOR_CUSTOM(joystickbutton,Fire,does,WhenPressed,new CatapultFireCommand());
 }

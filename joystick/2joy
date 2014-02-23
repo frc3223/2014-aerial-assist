@@ -1,0 +1,54 @@
+#ifndef SENSOR_3223_JOYSTICK_2joy
+#define SENSOR_3223_JOYSTICK_2joy
+
+#include "../Lib/OptArgDef.h"
+
+// 2 joysticks
+#define JOYSTICK_2joy_OI(name) do { \
+    joystick_##name##_leftjoy = new Joystick(joystick_##name##_STARTPORT);    \
+    joystick_##name##_rightjoy = new Joystick(1+joystick_##name##_STARTPORT); \
+    joystickbutton_Slow = new JoystickButton(joystick_##name##_rightjoy, 2);  \
+} while (0)
+
+//  joystickbutton_1    = new JoystickButton(joystick_##name##_rightjoy, 1);
+//  joystickbutton_3    = new JoystickButton(joystick_##name##_rightjoy, 3);
+//  joystickbutton_4    = new JoystickButton(joystick_##name##_rightjoy, 4);
+//  joystickbutton_5    = new JoystickButton(joystick_##name##_rightjoy, 5);
+//  joystickbutton_6    = new JoystickButton(joystick_##name##_rightjoy, 6);
+//  joystickbutton_7    = new JoystickButton(joystick_##name##_rightjoy, 7);
+//  joystickbutton_8    = new JoystickButton(joystick_##name##_rightjoy, 8);
+//  joystickbutton_9    = new JoystickButton(joystick_##name##_rightjoy, 9);
+//  joystickbutton_0    = new JoystickButton(joystick_##name##_rightjoy, 10);
+
+// Implement joystick buttons
+#define JOYSTICK_2joy_OI_H(name)          \
+    Joystick *joystick_##name##_leftjoy;  \
+    Joystick *joystick_##name##_rightjoy; \
+    JoystickButton *joystickbutton_Slow
+
+//  JoystickButton *joystickbutton_1;
+//  JoystickButton *joystickbutton_3;
+//  JoystickButton *joystickbutton_4;
+//  JoystickButton *joystickbutton_5;
+//  JoystickButton *joystickbutton_6;
+//  JoystickButton *joystickbutton_7;
+//  JoystickButton *joystickbutton_8;
+//  JoystickButton *joystickbutton_9;
+//  JoystickButton *joystickbutton_0;
+
+#define JOYSTICK_2joy_GET(name,item,...) JOYSTICK_2joy_GET_##item(name,##__VA_ARGS__)
+
+#define JOYSTICK_2joy_GET_Axis(name,axis,side) (OI_VAR->joystick_##name##_##side##joy->GetRawAxis(axis))
+#define JOYSTICK_2joy_GET_Button_0(name,button) (OI_VAR->joystick_##name##_rightjoy->GetRawButton(button))
+#define JOYSTICK_2joy_GET_Button_1(name,button,side) (OI_VAR->joystick_##name##_##side##joy->GetRawButton(button))
+#define JOYSTICK_2joy_GET_Button(name,button,...) \
+    ARG_3(,##__VA_ARGS__,\
+    JOYSTICK_2joy_GET_Button_1(name,button,##__VA_ARGS__),\
+    JOYSTICK_2joy_GET_Button_0(name,button,##__VA_ARGS__))
+#define JOYSTICK_2joy_GET_LeftJoyX(name) (OI_VAR->joystick_##name##_leftjoy->GetRawAxis(1))
+#define JOYSTICK_2joy_GET_LeftJoyY(name) (OI_VAR->joystick_##name##_leftjoy->GetRawAxis(2))
+#define JOYSTICK_2joy_GET_RightJoyX(name) (OI_VAR->joystick_##name##_rightjoy->GetRawAxis(1))
+#define JOYSTICK_2joy_GET_RightJoyX(name) (OI_VAR->joystick_##name##_rightjoy->GetRawAxis(1))
+
+#endif
+

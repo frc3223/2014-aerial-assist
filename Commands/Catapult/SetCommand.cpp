@@ -1,4 +1,4 @@
-#include "CatapultSetCommand.h"
+#include "SetCommand.h"
 
 CatapultSetCommand::CatapultSetCommand()
 {

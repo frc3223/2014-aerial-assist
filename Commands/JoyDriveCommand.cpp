@@ -20,8 +20,8 @@ void JoyDriveCommand::Initialize()
 /// Runs the joystick on tank drive, with the slow button halving the inputs.
 void JoyDriveCommand::Execute()
 {
-    OI_VAR->buttonSlow->Get() ? drivemotorsubsystem->ArcadeDrive(LEFTJOYY/2,-LEFTJOYX/2)
-            : drivemotorsubsystem->ArcadeDrive(LEFTJOYY,-LEFTJOYX);
+    SENSOR_GET(joystickbutton,Slow) ? drivemotorsubsystem->ArcadeDrive(SENSOR_GET(joystick,main,LeftJoyY)/2,-SENSOR_GET(joystick,main,LeftJoyX)/2)
+            : drivemotorsubsystem->ArcadeDrive(SENSOR_GET(joystick,main,LeftJoyY),-SENSOR_GET(joystick,main,LeftJoyX));
 }
 
 // Make this return true when this Command no longer needs to run execute()

@@ -1,6 +1,8 @@
 #ifndef SENSOR_3223_DIGITALIN
 #define SENSOR_3223_DIGITALIN
 
+#include "../Lib/Preprocessor.h"
+
 #define SENSOR_digitalin_OI(name) do { digitalin_##name = new DigitalInput(digitalin_##name##_MODULE,digitalin_##name##_CHANNEL); } while (0)
 #define SENSOR_digitalin_OI_H(name) DigitalInput *digitalin_##name
 
@@ -8,7 +10,6 @@
 // type can be AnalogTriggerForRouting, Channel, ChannelForRouting, ModuleForRouting, SmartDashboardType, or Table
 #define SENSOR_digitalin_GET_0(name) (OI_VAR->digitalin_##name->Get())
 #define SENSOR_digitalin_GET_1(name,type) (OI_VAR->digitalin_##name->Get##type())
-#define ARG_3(A,B,C,...) C
 #define SENSOR_digitalin_GET(name,...) \
     ARG_3(,##__VA_ARGS__,\
     SENSOR_digitalin_GET_1(name,##__VA_ARGS__),\

@@ -10,23 +10,8 @@ private:
 public:
     OI();
 
-    JOYSTICK_H;
-    JoystickButton *button1;
-    JoystickButton *button2;
-    JoystickButton *button3;
-    JoystickButton *button4;
-    JoystickButton *button5;
-    JoystickButton *button6;
-    JoystickButton *button7;
-    JoystickButton *button8;
-    JoystickButton *button9;
-    JoystickButton *button0;
-
-    JoystickButton *buttonSlow;
-    JoystickButton *buttonCompress;
-    JoystickButton *buttonArmUp;
-    JoystickButton *buttonArmDown;
-    JoystickButton *buttonFire;
+#define JOYSTICK_TYPE_main xbox
+    SENSOR_OI_H(joystick,main);
 
     SENSOR_OI_H(gyro,gyro);
     SENSOR_OI_H(digitalin,compressor);

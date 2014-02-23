@@ -60,6 +60,11 @@
 #define digitalin_catapult_MODULE    DIGITAL_MODULE
 #define digitalin_catapult_CHANNEL   6
 
+#include "sensor/joystick"
+#include "sensor/joystickbutton"
+#include "joystick/xbox"
+#define joystick_drive_STARTPORT   1
+
 #include "Lib/Sensor.h"
 #include "sensor/gyro"
 #include "sensor/encoder"
@@ -75,7 +80,5 @@
 // number and the module. For example you with a rangefinder:
 // #define RANGE_FINDER_CHANNEL 1
 // #define RANGE_FINDER_MODULE 1
-
-#include "controller/xbox_"
 
 #endif

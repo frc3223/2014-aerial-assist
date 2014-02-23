@@ -1,0 +1,45 @@
+#ifndef SENSOR_3223_JOYSTICK_xbox
+#define SENSOR_3223_JOYSTICK_xbox
+
+// Xbox 360 joystick
+// Buttons are, in order: a, b, x, y, left bumper, right bumper, back, start, left joy, right joy
+#define JOYSTICK_xbox_OI(name) do {                                          \
+    joystick_##name##_xbox  = new Joystick(joystick_##name##_STARTPORT);     \
+    joystickbutton_Slow     = new JoystickButton(joystick_##name##_xbox, 2); \
+    joystickbutton_Compress = new JoystickButton(joystick_##name##_xbox, 4); \
+    joystickbutton_ArmDown  = new JoystickButton(joystick_##name##_xbox, 5); \
+    joystickbutton_ArmUp    = new JoystickButton(joystick_##name##_xbox, 6); \
+    joystickbutton_Fire     = new JoystickButton(joystick_##name##_xbox, 8); \
+} while (0)
+
+//  joystickbutton_1        = new JoystickButton(joystick_##name##_xbox, 1);
+//  joystickbutton_3        = new JoystickButton(joystick_##name##_xbox, 3);
+//  joystickbutton_7        = new JoystickButton(joystick_##name##_xbox, 7);
+//  joystickbutton_9        = new JoystickButton(joystick_##name##_xbox, 9);
+//  joystickbutton_0        = new JoystickButton(joystick_##name##_xbox, 10);
+
+// Implement joystick buttons
+#define JOYSTICK_xbox_OI_H(name) Joystick *joystick_##name##_xbox; \
+    JoystickButton *joystickbutton_Slow;     \
+    JoystickButton *joystickbutton_Compress; \
+    JoystickButton *joystickbutton_ArmDown;  \
+    JoystickButton *joystickbutton_ArmUp;    \
+    JoystickButton *joystickbutton_Fire
+
+//  JoystickButton *joystickbutton_1;
+//  JoystickButton *joystickbutton_3;
+//  JoystickButton *joystickbutton_7;
+//  JoystickButton *joystickbutton_9;
+//  JoystickButton *joystickbutton_0
+
+#define JOYSTICK_xbox_GET(name,item,...) JOYSTICK_xbox_GET_##item(name,##__VA_ARGS__)
+
+#define JOYSTICK_xbox_GET_Axis(name,side) (OI_VAR->joystick_##name##_xbox->GetRawAxis(axis))
+#define JOYSTICK_xbox_GET_Button(name,button) (OI_VAR->joystick_##name##_xbox->GetRawButton(button))
+#define JOYSTICK_xbox_GET_LeftJoyX(name) (OI_VAR->joystick_##name##_xbox->GetRawAxis(1))
+#define JOYSTICK_xbox_GET_LeftJoyY(name) (OI_VAR->joystick_##name##_xbox->GetRawAxis(2))
+#define JOYSTICK_xbox_GET_RightJoyX(name) (OI_VAR->joystick_##name##_xbox->GetRawAxis(4))
+#define JOYSTICK_xbox_GET_RightJoyY(name) (OI_VAR->joystick_##name##_xbox->GetRawAxis(5))
+
+#endif
+

@@ -1,6 +1,8 @@
 #ifndef SENSOR_3223_GYRO
 #define SENSOR_3223_GYRO
 
+#include "../Lib/Preprocessor.h"
+
 #define SENSOR_gyro_OI(name,...) do { gyro_##name = new Gyro(gyro_##name##_MODULE,gyro_##name##_CHANNEL); } while (0)
 #define SENSOR_gyro_OI_H(name,...) Gyro *gyro_##name
 
@@ -8,7 +10,6 @@
 // type can be Angle, Rate, SmartDashboardType, or Table
 #define SENSOR_gyro_GET_0(name) (OI_VAR->gyro_##name->GetAngle())
 #define SENSOR_gyro_GET_1(name,type) (OI_VAR->gyro_##name->Get##type())
-#define ARG_3(A,B,C,...) C
 #define SENSOR_gyro_GET(name,...) \
     ARG_3(,##__VA_ARGS__,\
     SENSOR_gyro_GET_1(name,##__VA_ARGS__),\

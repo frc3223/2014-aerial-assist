@@ -1,6 +1,8 @@
 #ifndef SENSOR_3223_ENCODER
 #define SENSOR_3223_ENCODER
 
+#include "../Lib/Preprocessor.h"
+
 #define SENSOR_encoder_OI(name,...) do { encoder_##name = new Encoder(encoder_##name##_MODULE,encoder_##name##_CHANNEL); } while (0)
 #define SENSOR_encoder_OI_H(name,...) Encoder *encoder_##name
 
@@ -8,7 +10,6 @@
 // type can be Direction, Distance, Period, Rate, Raw, SamplesToAverage, SmartDashboardType, Stopped, or Table
 #define SENSOR_encoder_GET_0(name) (OI_VAR->encoder_##name->Get())
 #define SENSOR_encoder_GET_1(name,type) (OI_VAR->encoder_##name->Get##type())
-#define ARG_3(A,B,C,...) C
 #define SENSOR_encoder_GET(name,...) \
     ARG_3(,##__VA_ARGS__,\
     SENSOR_encoder_GET_1(name,##__VA_ARGS__),\

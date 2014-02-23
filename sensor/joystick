@@ -1,0 +1,20 @@
+#ifndef SENSOR_3223_JOYSTICK
+#define SENSOR_3223_JOYSTICK
+
+#include "../Lib/Preprocessor.h"
+
+// To get the defined constant pasted, you have to paste JOYSTICK_, the given name, and _TYPE together (1), make the define kick in (2), and then paste it between JOYSTICK_ and _OI.
+#define SENSOR_joystick_OI(name,...) SENSOR_joystick_OI_(name,JOYSTICK_##name##_TYPE,##__VA_ARGS__)
+#define SENSOR_joystick_OI_(name,type,...) SENSOR_joystick_OI__(name,type,##__VA_ARGS__)
+#define SENSOR_joystick_OI__(name,type,...) JOYSTICK_##type##_OI(name,##__VA_ARGS__)
+
+#define SENSOR_joystick_OI_H(name,...) SENSOR_joystick_OI_H_(name,JOYSTICK_TYPE_##name,##__VA_ARGS__)
+#define SENSOR_joystick_OI_H_(name,type,...) SENSOR_joystick_OI_H__(name,type,##__VA_ARGS__)
+#define SENSOR_joystick_OI_H__(name,type,...) JOYSTICK_##type##_OI_H(name,##__VA_ARGS__)
+
+#define SENSOR_joystick_GET(name,...) SENSOR_joystick_GET_(name,JOYSTICK_TYPE_##name,##__VA_ARGS__)
+#define SENSOR_joystick_GET_(name,type,...) SENSOR_joystick_GET__(name,type,__VA_ARGS__)
+#define SENSOR_joystick_GET__(name,type,...) JOYSTICK_##type##_GET(name,__VA_ARGS__)
+
+#endif
+
