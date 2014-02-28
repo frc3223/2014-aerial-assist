@@ -1,18 +1,18 @@
-#ifndef ARMUPCOMMAND_H
-#define ARMUPCOMMAND_H
+#ifndef AUTODRIVECOMMAND_H
+#define AUTODRIVECOMMAND_H
 
-#include "../../CommandBase.h"
-#include "../../Robotmagic.h"
+#include "../CommandBase.h"
+#include "../Robotmagic.h"
 
 /**
  *
  *
  * @author frc
  */
-class ArmUpCommand: public CommandBase
+class AutoDriveCommand: public CommandBase
 {
 public:
-    ArmUpCommand();
+    AutoDriveCommand();
     virtual void Initialize();
     virtual void Execute();
     virtual bool IsFinished();

@@ -8,11 +8,11 @@
 #define SENSOR_joystick_OI_(name,type,...) SENSOR_joystick_OI__(name,type,##__VA_ARGS__)
 #define SENSOR_joystick_OI__(name,type,...) JOYSTICK_##type##_OI(name,##__VA_ARGS__)
 
-#define SENSOR_joystick_OI_H(name,...) SENSOR_joystick_OI_H_(name,JOYSTICK_TYPE_##name,##__VA_ARGS__)
+#define SENSOR_joystick_OI_H(name,...) SENSOR_joystick_OI_H_(name,JOYSTICK_##name##_TYPE,##__VA_ARGS__)
 #define SENSOR_joystick_OI_H_(name,type,...) SENSOR_joystick_OI_H__(name,type,##__VA_ARGS__)
 #define SENSOR_joystick_OI_H__(name,type,...) JOYSTICK_##type##_OI_H(name,##__VA_ARGS__)
 
-#define SENSOR_joystick_GET(name,...) SENSOR_joystick_GET_(name,JOYSTICK_TYPE_##name,##__VA_ARGS__)
+#define SENSOR_joystick_GET(name,...) SENSOR_joystick_GET_(name,JOYSTICK_##name##_TYPE,##__VA_ARGS__)
 #define SENSOR_joystick_GET_(name,type,...) SENSOR_joystick_GET__(name,type,__VA_ARGS__)
 #define SENSOR_joystick_GET__(name,type,...) JOYSTICK_##type##_GET(name,__VA_ARGS__)
 

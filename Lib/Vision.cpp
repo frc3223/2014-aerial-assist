@@ -2,32 +2,34 @@
 #define VISION_3223
 
 #include "Vision.h"
+#define max(x,y) ((x)>(y)?(x):(y))
+#define min(x,y) ((x)<(y)?(x):(y))
 
 // Based off of the vision sample code for 2014.
 
 namespace Vision
 {
 //Camera constants used for distance calculation
-static const int Y_IMAGE_RES = 480; //X Image resolution in pixels, should be 120, 240 or 480
-static const double VIEW_ANGLE = 49; //Axis M1013
-//static const double VIEW_ANGLE = 41.7; //Axis 206 camera
-//static const double VIEW_ANGLE = 37.4; //Axis M1011 camera
-static const double PI = 3.141592653;
+static int const Y_IMAGE_RES = 480; //X Image resolution in pixels, should be 120, 240 or 480
+static double const VIEW_ANGLE = 49; //Axis M1013
+//static double const VIEW_ANGLE = 41.7; //Axis 206 camera
+//static double const VIEW_ANGLE = 37.4; //Axis M1011 camera
+static double const PI = 3.141592653;
 
 //Score limits used for target identification
-static const int RECTANGULARITY_LIMIT = 40;
-static const int ASPECT_RATIO_LIMIT = 55;
+static int const RECTANGULARITY_LIMIT = 40;
+static int const ASPECT_RATIO_LIMIT = 55;
 
 //Score limits used for hot target determination
-static const int TAPE_WIDTH_LIMIT = 50;
-static const int VERTICAL_SCORE_LIMIT = 50;
-static const int LR_SCORE_LIMIT = 50;
+static int const TAPE_WIDTH_LIMIT = 50;
+static int const VERTICAL_SCORE_LIMIT = 50;
+static int const LR_SCORE_LIMIT = 50;
 
 //Minimum area of particles to be considered
-static const int AREA_MINIMUM = 150;
+static int const AREA_MINIMUM = 150;
 
 //Maximum number of particles to process
-static const unsigned int MAX_PARTICLES = 8;
+static unsigned int const MAX_PARTICLES = 8;
 
 Aim analyze(ColorImage *image)
 {

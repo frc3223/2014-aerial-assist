@@ -4,7 +4,7 @@
 #include "WPILib.h"
 #include "Vision/RGBImage.h"
 #include "Vision/BinaryImage.h"
-#include "Math.h"
+#include <math.h>
 
 namespace Vision
 {
@@ -13,7 +13,7 @@ typedef struct Scores
     double rectangularity;
     double aspectRatioVertical;
     double aspectRatioHorizontal;
-};
+} Scores;
 typedef struct TargetReport
 {
     int verticalIndex;
@@ -25,7 +25,7 @@ typedef struct TargetReport
     double tapeWidthScore;
     double verticalScore;
     double distance;
-};
+} TargetReport;
 typedef struct Aim
 {
     double rotDelta;

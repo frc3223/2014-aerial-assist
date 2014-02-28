@@ -21,7 +21,8 @@ public:
     void Drive(float magnitude = 0,float curve = 0);
     void ArcadeDrive(float moveValue,float direction,bool squaredInputs = true);
     void TankDrive(float leftValue,float rightValue,bool squaredInputs = true);
-    void DriveMotorSubsystem::MoveRotate(double distance,double radAngle);
+    void LeftSet(float speed=0);
+    void RightSet(float speed=0);
 };
 
 #endif

@@ -17,10 +17,10 @@ private:
 public:
     CompressorSubsystem();
     void InitDefaultCommand();
-    bool CompressorSubsystem::Enabled();
-    bool CompressorSubsystem::GetPressureSwitchValue();
-    void CompressorSubsystem::Start();
-    void CompressorSubsystem::Stop();
+    bool Enabled();
+    bool GetPressureSwitchValue();
+    void Start();
+    void Stop();
 };
 
 #endif

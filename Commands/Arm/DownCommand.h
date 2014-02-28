@@ -1,8 +1,8 @@
 #ifndef ARMDOWNCOMMAND_H
 #define ARMDOWNCOMMAND_H
 
-#include "../CommandBase.h"
-#include "../Robotmagic.h"
+#include "../../CommandBase.h"
+#include "../../Robotmagic.h"
 
 /**
  *

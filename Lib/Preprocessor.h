@@ -11,8 +11,5 @@
 #define ARG_8(A,B,C,D,E,F,G,H,...) H
 #define ARG_9(A,B,C,D,E,F,G,H,I,...) I
 
-#define PASTE(x,y) PASTE_(x,y)
-#define PASTE_(x,y) x##y
-
 #endif
 

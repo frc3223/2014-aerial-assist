@@ -10,7 +10,7 @@ private:
 public:
     OI();
 
-#define JOYSTICK_TYPE_main xbox
+#define JOYSTICK_main_TYPE xbox
     SENSOR_OI_H(joystick,main);
 
     SENSOR_OI_H(gyro,gyro);
@@ -18,6 +18,8 @@ public:
     SENSOR_OI_H(digitalin,arm_top);
     SENSOR_OI_H(digitalin,arm_bot);
     SENSOR_OI_H(digitalin,catapult);
+    SENSOR_OI_H(encoder,left);
+    SENSOR_OI_H(encoder,right);
 };
 
 #endif

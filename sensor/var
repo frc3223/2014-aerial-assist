@@ -1,0 +1,13 @@
+#ifndef SENSOR_3223_VAR
+#define SENSOR_3223_VAR
+
+#include "../Lib/Preprocessor.h"
+
+#define SENSOR_var_OI(name) do { ; } while (0)
+#define SENSOR_var_OI_H(name,type) type var_##type##_##name
+
+#define SENSOR_var_GET(name,type) (OI_VAR->var_##type##_##name)
+
+#define SENSOR_var_SET(name,type,value) do { var_##type##_##name = value; } while (0)
+
+#endif

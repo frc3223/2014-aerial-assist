@@ -24,7 +24,7 @@ public:
     {
         big = 1, little = 0
     };
-    void Set(CatapultSubsystem::CylinderType type,Relay::Value value);
+    void Set(CylinderType type,Relay::Value value);
 };
 
 #endif

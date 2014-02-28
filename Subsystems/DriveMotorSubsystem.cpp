@@ -4,8 +4,9 @@
 DriveMotorSubsystem::DriveMotorSubsystem() :
     Subsystem("DriveMotorSubsystem")
 {
-    moveDrive = new RobotDrive(new DualSpeedController(NEWMOTOR(left1),NEWMOTOR(left2)),
-            new DualSpeedController(NEWMOTOR(right1),NEWMOTOR(right2))); // Sets up the drive system
+    leftController  = new DualSpeedController(NEWMOTOR(left1),NEWMOTOR(left2));
+    rightController = new DualSpeedController(NEWMOTOR(right1),NEWMOTOR(right2));
+    moveDrive       = new RobotDrive(leftController,rightController); // Sets up the drive system
 }
 
 void DriveMotorSubsystem::InitDefaultCommand()
@@ -19,6 +20,18 @@ void DriveMotorSubsystem::InitDefaultCommand()
 void DriveMotorSubsystem::Drive(float magnitude,float curve)
 {
     moveDrive->Drive(magnitude,curve);
+}
+
+/// Pass-through to the left MotorController::Set function.
+void DriveMotorSubsystem::LeftSet(float speed)
+{
+    leftController->Set(speed);
+}
+
+/// Pass-through to the left MotorController::Set function.
+void DriveMotorSubsystem::RightSet(float speed)
+{
+    rightController->Set(speed);
 }
 
 /// Pass-through to the RobotDrive::ArcadeDrive function.

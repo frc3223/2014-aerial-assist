@@ -3,11 +3,12 @@
 
 #include "../Lib/Preprocessor.h"
 
-#define SENSOR_encoder_OI(name,...) do { encoder_##name = new Encoder(encoder_##name##_MODULE,encoder_##name##_CHANNEL); } while (0)
+// Besides the normal MODULE, CHANNEL_A and CHANNEL_B need to be defined as well as the bool REVERSE and PULSEDIST.
+#define SENSOR_encoder_OI(name,...) do { encoder_##name = new Encoder(encoder_##name##_MODULE,encoder_##name##_CHANNEL_A,encoder_##name##_MODULE,encoder_##name##_CHANNEL_B,encoder_##name##_REVERSE); encoder_##name->SetDistancePerPulse(encoder_##name##_PULSEDIST); } while (0)
 #define SENSOR_encoder_OI_H(name,...) Encoder *encoder_##name
 
 // Varidic SENSOR_encoder_GET (meditate upon http://stackoverflow.com/a/8814003 if confused)
-// type can be Direction, Distance, Period, Rate, Raw, SamplesToAverage, SmartDashboardType, Stopped, or Table
+// type can be Direction, Distance, Rate, Raw, SamplesToAverage, SmartDashboardType, Stopped, or Table
 #define SENSOR_encoder_GET_0(name) (OI_VAR->encoder_##name->Get())
 #define SENSOR_encoder_GET_1(name,type) (OI_VAR->encoder_##name->Get##type())
 #define SENSOR_encoder_GET(name,...) \
@@ -15,7 +16,7 @@
     SENSOR_encoder_GET_1(name,##__VA_ARGS__),\
     SENSOR_encoder_GET_0(name,##__VA_ARGS__))
 
-// thing can be DistancePerPulse, MaxPeriod, MinRate, PIDSourceParameter, ReverseDirection, or SamplesToAverage
+// thing can be DistancePerPulse, MinRate, PIDSourceParameter, ReverseDirection, or SamplesToAverage
 #define SENSOR_encoder_SET(name,thing,...) (OI_VAR->encoder_##name->Set##thing(__VA_ARGS__))
 
 // Extra stuff to be called by SENSOR_CUSTOM
