@@ -18,10 +18,10 @@
 #define DIGITAL_MODULE                1
 #define SOLENOID_MODULE               1
 
-#define JAGUAR_1_CHANNEL              3
-#define JAGUAR_2_CHANNEL              4
-#define JAGUAR_3_CHANNEL              1
-#define JAGUAR_4_CHANNEL              2
+#define JAGUAR_1_CHANNEL              1
+#define JAGUAR_2_CHANNEL              2
+#define JAGUAR_3_CHANNEL              3
+#define JAGUAR_4_CHANNEL              4
 #define  TALON_1_CHANNEL              5
 
 #define DRIVE_MODULE                  DIGITAL_MODULE
@@ -58,7 +58,7 @@
 #define CATAPULT_2_FORWARD_CHANNEL    5 // Lock
 #define CATAPULT_2_REVERSE_CHANNEL    6 // Fire
 #define digitalin_catapult_MODULE     DIGITAL_MODULE
-#define digitalin_catapult_CHANNEL    6
+#define digitalin_catapult_CHANNEL    4
 
 #include "sensor/joystick"
 #include "sensor/joystickbutton"
@@ -78,17 +78,16 @@
 #define ENCODER_drive_PULSEDIST       1
 #define ENCODER_drive_REVERSE         true
 #define encoder_drive_left_MODULE     ENCODER_drive_MODULE
-#define encoder_drive_left_CHANNEL_A  4
-#define encoder_drive_left_CHANNEL_B  5
+#define encoder_drive_left_CHANNEL_A  5
+#define encoder_drive_left_CHANNEL_B  6
 #define encoder_drive_left_REVERSE    ENCODER_drive_REVERSE
+#define encoder_drive_left_PULSEDIST  ENCODER_drive_PULSEDIST
 #define encoder_drive_right_MODULE    ENCODER_drive_MODULE
-#define encoder_drive_right_CHANNEL_A 6
-#define encoder_drive_right_CHANNEL_B 7
+#define encoder_drive_right_CHANNEL_A 7
+#define encoder_drive_right_CHANNEL_B 8
 #define encoder_drive_right_REVERSE   ENCODER_drive_REVERSE
-
-// If you are using multiple modules, make sure to define both the port
-// number and the module. For example you with a rangefinder:
-// #define RANGE_FINDER_CHANNEL 1
-// #define RANGE_FINDER_MODULE 1
+#define encoder_drive_right_PULSEDIST ENCODER_drive_PULSEDIST
+#define AUTODRIVE_ENCODER             drive_left
 
 #endif
+

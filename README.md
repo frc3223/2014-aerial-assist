@@ -1,6 +1,6 @@
 POKER Robotics's 2014 Aerial Assist robot code.
 
-It requires the following from the [C++11 Toolchain for the cRIO](http://firstforge.wpilib.edu/sf/projects/c--11_toolchain):
+It requires the following from the [C++11 Toolchain for the cRIO](http://firstforge.wpi.edu/sf/projects/c--11_toochain):
 
 * Binutils for vxWorks
 * GCC for vxWorks
@@ -9,7 +9,7 @@ It requires the following from the [C++11 Toolchain for the cRIO](http://firstfo
 * frcmake
 * wput (if you want to deploy code from the build machine)
 
-For installation instructions, check out the [wiki](http://firstforge.wpilib.edu/sf/wiki/do/viewPage/projects.c--11_toolchain/wiki/HomePage).
+For installation instructions, check out the [wiki](http://firstforge.wpi.edu/sf/wiki/do/viewPage/projects.c--11_toochain/wiki/HomePage).
 
 To build the project:
 
@@ -19,3 +19,5 @@ To build the project:
 4. When connected to the robot, run ```make deploy``` to deploy the code
 5. Whenever you change the code, you can now just run ```make -C <build dir>``` from the project directory (or anywhere) to rebuild
 6. Whenever you add, move, or delete files in the project, you can now just run ```frcmake <build dir>``` from the project directory (or anywhere) to remake the makefiles
+
+© 2014 POKER Robotics

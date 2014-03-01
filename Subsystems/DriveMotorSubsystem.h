@@ -14,6 +14,8 @@ class DriveMotorSubsystem: public Subsystem
 private:
     // It's desirable that everything possible under private except
     // for methods that implement subsystem capabilities
+    SpeedController *leftController;
+    SpeedController *rightController;
     RobotDrive *moveDrive;
 public:
     DriveMotorSubsystem();
@@ -21,8 +23,10 @@ public:
     void Drive(float magnitude = 0,float curve = 0);
     void ArcadeDrive(float moveValue,float direction,bool squaredInputs = true);
     void TankDrive(float leftValue,float rightValue,bool squaredInputs = true);
-    void LeftSet(float speed=0);
-    void RightSet(float speed=0);
+    void MoveRotate(std::function<float ()> distGet,
+        std::function<float ()> angleGet,
+        std::function<float ()> speedGet,
+        float distance,float angle);
 };
 
 #endif

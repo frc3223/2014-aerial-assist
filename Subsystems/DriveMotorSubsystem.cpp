@@ -1,5 +1,6 @@
 #include "DriveMotorSubsystem.h"
-#include "../Commands/JoyDriveCommand.h"
+#include "../Commands/Drive/JoyCommand.h"
+#include "../Lib/AutoDrive.h"
 
 DriveMotorSubsystem::DriveMotorSubsystem() :
     Subsystem("DriveMotorSubsystem")
@@ -22,18 +23,6 @@ void DriveMotorSubsystem::Drive(float magnitude,float curve)
     moveDrive->Drive(magnitude,curve);
 }
 
-/// Pass-through to the left MotorController::Set function.
-void DriveMotorSubsystem::LeftSet(float speed)
-{
-    leftController->Set(speed);
-}
-
-/// Pass-through to the left MotorController::Set function.
-void DriveMotorSubsystem::RightSet(float speed)
-{
-    rightController->Set(speed);
-}
-
 /// Pass-through to the RobotDrive::ArcadeDrive function.
 void DriveMotorSubsystem::ArcadeDrive(float moveValue,float rotateValue,bool squaredInputs)
 {
@@ -47,9 +36,17 @@ void DriveMotorSubsystem::TankDrive(float leftValue,float rightValue,bool square
 }
 
 /// Atomic move-rotate for easy autonomous control.
-void DriveMotorSubsystem::MoveRotate(double distance,double radAngle)
+void DriveMotorSubsystem::MoveRotate(std::function<float ()> distGet,
+        std::function<float ()> angleGet,
+        std::function<float ()> speedGet,
+        float distance,float angle)
 {
-
+    autoDrive([&](float dist){leftController->Set(dist);},
+            [&](float dist){rightController->Set(dist);},
+            distGet,
+            angleGet,
+            speedGet,
+            distance,angle);
 }
 
 // Put methods for controlling this subsystem

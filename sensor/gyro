@@ -18,6 +18,6 @@
 // thing can be PIDSourceParameter, or Sensitivity
 #define SENSOR_gyro_SET(name,thing,...) (OI_VAR->gyro_##name->Set##thing(__VA_ARGS__))
 
-#define SENSOR_gyro_Reset(name) do { gyro_##name->Reset(); } while (0)
+#define SENSOR_gyro_Reset(name) do { OI_VAR->gyro_##name->Reset(); } while (0)
 
 #endif

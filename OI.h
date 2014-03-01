@@ -18,8 +18,8 @@ public:
     SENSOR_OI_H(digitalin,arm_top);
     SENSOR_OI_H(digitalin,arm_bot);
     SENSOR_OI_H(digitalin,catapult);
-    SENSOR_OI_H(encoder,left);
-    SENSOR_OI_H(encoder,right);
+    SENSOR_OI_H(encoder,drive_left);
+    SENSOR_OI_H(encoder,drive_right);
 };
 
 #endif

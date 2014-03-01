@@ -1,8 +1,10 @@
 #ifndef AUTODRIVECOMMAND_H
 #define AUTODRIVECOMMAND_H
 
-#include "../CommandBase.h"
-#include "../Robotmagic.h"
+#include <functional>
+#include "../../CommandBase.h"
+#include "../../Robotmagic.h"
+#include "../../Lib/AutoDrive.h"
 
 /**
  *
@@ -11,6 +13,8 @@
  */
 class AutoDriveCommand: public CommandBase
 {
+private:
+    bool finished;
 public:
     AutoDriveCommand();
     virtual void Initialize();

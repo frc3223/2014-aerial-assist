@@ -1,8 +1,8 @@
 #ifndef JOYDRIVECOMMAND_H
 #define JOYDRIVECOMMAND_H
 
-#include "../CommandBase.h"
-#include "../Robotmagic.h"
+#include "../../CommandBase.h"
+#include "../../Robotmagic.h"
 
 /**
  *

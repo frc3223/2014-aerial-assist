@@ -1,5 +1,7 @@
 #include "SetCommand.h"
 
+constexpr auto switchtime = 500;
+
 CatapultSetCommand::CatapultSetCommand()
 {
     // Use requires() here to declare subsystem dependencies
@@ -17,8 +19,18 @@ void CatapultSetCommand::Initialize()
 void CatapultSetCommand::Execute()
 {
     catapultsubsystem->Set(CatapultSubsystem::little,Relay::kForward);
-    SENSOR_GET(digitalin,catapult) ? catapultsubsystem->Set(CatapultSubsystem::big,Relay::kForward)
-            : catapultsubsystem->Set(CatapultSubsystem::big,Relay::kReverse);
+    if (SENSOR_GET(digitalin,catapult))
+    {
+        catapultsubsystem->Set(CatapultSubsystem::big,Relay::kForward);
+        catapultsubsystem->Set(CatapultSubsystem::little,Relay::kForward);
+    } else
+    {
+        catapultsubsystem->Set(CatapultSubsystem::big,Relay::kReverse);
+        if ((GetFPGATime()%(switchtime*2))>=(switchtime))
+            {catapultsubsystem->Set(CatapultSubsystem::little,Relay::kReverse);}
+        else
+            {catapultsubsystem->Set(CatapultSubsystem::little,Relay::kForward);}
+    }
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -30,7 +42,6 @@ bool CatapultSetCommand::IsFinished()
 // Called once after isFinished returns true
 void CatapultSetCommand::End()
 {
-
 }
 
 // Called when another command which requires one or more of the same

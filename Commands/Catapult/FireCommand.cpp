@@ -1,5 +1,8 @@
 #include "FireCommand.h"
 
+constexpr auto totaltime = 1;
+constexpr auto switchtime = .1;
+
 CatapultFireCommand::CatapultFireCommand()
 {
     // Use requires() here to declare subsystem dependencies
@@ -11,7 +14,6 @@ CatapultFireCommand::CatapultFireCommand()
 void CatapultFireCommand::Initialize()
 {
     SetInterruptible(false);
-    SetTimeout(1);
 }
 
 // Called repeatedly when this Command is scheduled to run
@@ -23,7 +25,7 @@ void CatapultFireCommand::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool CatapultFireCommand::IsFinished()
 {
-    return IsTimedOut();
+    return TimeSinceInitialized()>=totaltime;
 }
 
 // Called once after isFinished returns true

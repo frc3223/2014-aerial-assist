@@ -3,27 +3,27 @@
 
 // Xbox 360 joystick
 // Buttons are, in order: a, b, x, y, left bumper, right bumper, back, start, left joy, right joy
+//                        1, 2, 3, 4, 5,           6,            7,    8,     9,        10
 #define JOYSTICK_xbox_OI(name) do {                                          \
-    joystick_##name##_xbox  = new Joystick(joystick_##name##_STARTPORT);     \
-    joystickbutton_Slow     = new JoystickButton(joystick_##name##_xbox, 2); \
-    joystickbutton_Compress = new JoystickButton(joystick_##name##_xbox, 4); \
-    joystickbutton_ArmDown  = new JoystickButton(joystick_##name##_xbox, 5); \
-    joystickbutton_ArmUp    = new JoystickButton(joystick_##name##_xbox, 6); \
-    joystickbutton_Fire     = new JoystickButton(joystick_##name##_xbox, 8); \
+    joystick_##name##_xbox       = new Joystick(joystick_##name##_STARTPORT);     \
+    joystickbutton_Square        = new JoystickButton(joystick_##name##_xbox, 1); \
+    joystickbutton_Slow          = new JoystickButton(joystick_##name##_xbox, 2); \
+    joystickbutton_ArmDown       = new JoystickButton(joystick_##name##_xbox, 6); \
+    joystickbutton_ArmUpOverride = new JoystickButton(joystick_##name##_xbox, 7); \
+    joystickbutton_Fire          = new JoystickButton(joystick_##name##_xbox, 8); \
 } while (0)
 
-//  joystickbutton_1        = new JoystickButton(joystick_##name##_xbox, 1);
-//  joystickbutton_3        = new JoystickButton(joystick_##name##_xbox, 3);
-//  joystickbutton_7        = new JoystickButton(joystick_##name##_xbox, 7);
-//  joystickbutton_9        = new JoystickButton(joystick_##name##_xbox, 9);
-//  joystickbutton_0        = new JoystickButton(joystick_##name##_xbox, 10);
+//  joystickbutton_3             = new JoystickButton(joystick_##name##_xbox, 3);
+//  joystickbutton_4             = new JoystickButton(joystick_##name##_xbox, 4);
+//  joystickbutton_5             = new JoystickButton(joystick_##name##_xbox, 5);
+//  joystickbutton_9             = new JoystickButton(joystick_##name##_xbox, 9);
+//  joystickbutton_0             = new JoystickButton(joystick_##name##_xbox, 10);
 
 // Implement joystick buttons
 #define JOYSTICK_xbox_OI_H(name) Joystick *joystick_##name##_xbox; \
-    JoystickButton *joystickbutton_Slow;     \
-    JoystickButton *joystickbutton_Compress; \
-    JoystickButton *joystickbutton_ArmDown;  \
-    JoystickButton *joystickbutton_ArmUp;    \
+    JoystickButton *joystickbutton_Slow;          \
+    JoystickButton *joystickbutton_ArmDown;       \
+    JoystickButton *joystickbutton_ArmUpOverride; \
     JoystickButton *joystickbutton_Fire
 
 //  JoystickButton *joystickbutton_1;
@@ -38,8 +38,10 @@
 #define JOYSTICK_xbox_GET_Button(name,button) (OI_VAR->joystick_##name##_xbox->GetRawButton(button))
 #define JOYSTICK_xbox_GET_LeftJoyX(name) (OI_VAR->joystick_##name##_xbox->GetRawAxis(1))
 #define JOYSTICK_xbox_GET_LeftJoyY(name) (OI_VAR->joystick_##name##_xbox->GetRawAxis(2))
+#define JOYSTICK_xbox_GET_RockJoy(name) (OI_VAR->joystick_##name##_xbox->GetRawAxis(3))
 #define JOYSTICK_xbox_GET_RightJoyX(name) (OI_VAR->joystick_##name##_xbox->GetRawAxis(4))
 #define JOYSTICK_xbox_GET_RightJoyY(name) (OI_VAR->joystick_##name##_xbox->GetRawAxis(5))
+#define JOYSTICK_xbox_GET_BumpJoy(name) (OI_VAR->joystick_##name##_xbox->GetRawAxis(6))
 
 #endif
 

@@ -1,10 +1,11 @@
-#include "JoyDriveCommand.h"
+#include "BumpCommand.h"
+#include <math.h>
 
 /**
  * Runs the drive subsystem with the joysticks.
  */
 
-JoyDriveCommand::JoyDriveCommand()
+BumpDriveCommand::BumpDriveCommand()
 {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -12,33 +13,37 @@ JoyDriveCommand::JoyDriveCommand()
 }
 
 // Called just before this Command runs the first time
-void JoyDriveCommand::Initialize()
+void BumpDriveCommand::Initialize()
 {
 }
 
 // Called repeatedly when this Command is scheduled to run
 /// Runs the joystick on tank drive, with the slow button halving the inputs.
-void JoyDriveCommand::Execute()
+void BumpDriveCommand::Execute()
 {
-    SENSOR_GET(joystickbutton,Slow) ? drivemotorsubsystem->ArcadeDrive(SENSOR_GET(joystick,main,LeftJoyY)/2,-SENSOR_GET(joystick,main,LeftJoyX)/2)
-            : drivemotorsubsystem->ArcadeDrive(SENSOR_GET(joystick,main,LeftJoyY),-SENSOR_GET(joystick,main,LeftJoyX));
+    float speed = SENSOR_GET(joystickbutton,Slow) ? 0.5 : 1;
+    float moveY = SENSOR_GET(joystick,main,RightJoyY);
+    float moveX = SENSOR_GET(joystick,main,RightJoyX);
+    if (abs(moveY)>0.5) {moveY = copysign(speed,moveY); moveX = 0;}
+    else if (abs(moveX)>0.5) {moveX = copysign(speed,moveY); moveY = 0;};
+    drivemotorsubsystem->ArcadeDrive(moveX,-moveY);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool JoyDriveCommand::IsFinished()
+bool BumpDriveCommand::IsFinished()
 {
-    return false;
+    return SENSOR_GET(joystickbutton,);
 }
 
 // Called once after isFinished returns true
-void JoyDriveCommand::End()
+void BumpDriveCommand::End()
 {
     drivemotorsubsystem->Drive();
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void JoyDriveCommand::Interrupted()
+void BumpDriveCommand::Interrupted()
 {
     drivemotorsubsystem->Drive();
 }

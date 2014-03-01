@@ -1,4 +1,5 @@
 #include "ArmSubsystem.h"
+#include "../Commands/Arm/UpCommand.h"
 
 ArmSubsystem::ArmSubsystem() :
     Subsystem("ArmSubsystem")
@@ -10,6 +11,7 @@ void ArmSubsystem::InitDefaultCommand()
 {
     // Set the default command for a subsystem here.
     //SetDefaultCommand(new MySpecialCommand());
+    SetDefaultCommand(new ArmUpCommand());
 }
 
 // Put methods for controlling this subsystem

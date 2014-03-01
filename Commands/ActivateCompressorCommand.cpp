@@ -28,7 +28,6 @@ bool ActivateCompressorCommand::IsFinished()
 void ActivateCompressorCommand::End()
 {
     compressorsubsystem->Stop();
-    printf("Compressor full.\n");
 }
 
 // Called when another command which requires one or more of the same
