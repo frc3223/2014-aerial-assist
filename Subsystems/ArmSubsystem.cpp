@@ -4,6 +4,7 @@
 ArmSubsystem::ArmSubsystem() :
     Subsystem("ArmSubsystem")
 {
+    printf("arm init\n");
     arm = NEWMOTOR(arm);
 }
 

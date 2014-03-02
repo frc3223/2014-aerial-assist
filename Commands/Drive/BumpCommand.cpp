@@ -33,7 +33,7 @@ void BumpDriveCommand::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool BumpDriveCommand::IsFinished()
 {
-    return SENSOR_GET(joystickbutton,Square);
+    return SENSOR_GET(joystickbutton,Bump);
 }
 
 // Called once after isFinished returns true

@@ -20,6 +20,7 @@ void JoyDriveCommand::Initialize()
 /// Runs the joystick on tank drive, with the slow button halving the inputs.
 void JoyDriveCommand::Execute()
 {
+    printf("joy execute\n");
     SENSOR_GET(joystickbutton,Slow) ? drivemotorsubsystem->ArcadeDrive(SENSOR_GET(joystick,main,LeftJoyY)/2,-SENSOR_GET(joystick,main,LeftJoyX)/2)
             : drivemotorsubsystem->ArcadeDrive(SENSOR_GET(joystick,main,LeftJoyY),-SENSOR_GET(joystick,main,LeftJoyX));
 }

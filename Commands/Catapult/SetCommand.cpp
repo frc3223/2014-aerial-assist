@@ -18,6 +18,7 @@ void CatapultSetCommand::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void CatapultSetCommand::Execute()
 {
+    printf("catapult set execute\n");
     catapultsubsystem->Set(CatapultSubsystem::little,Relay::kForward);
     if (SENSOR_GET(digitalin,catapult))
     {

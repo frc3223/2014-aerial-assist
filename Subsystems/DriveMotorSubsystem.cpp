@@ -5,8 +5,11 @@
 DriveMotorSubsystem::DriveMotorSubsystem() :
     Subsystem("DriveMotorSubsystem")
 {
+    printf("leftController init\n");
     leftController  = new DualSpeedController(NEWMOTOR(left1),NEWMOTOR(left2));
+    printf("rightController init\n");
     rightController = new DualSpeedController(NEWMOTOR(right1),NEWMOTOR(right2));
+    printf("moveDrive init\n");
     moveDrive       = new RobotDrive(leftController,rightController); // Sets up the drive system
 }
 
@@ -49,5 +52,3 @@ void DriveMotorSubsystem::MoveRotate(std::function<float ()> distGet,
             distance,angle);
 }
 
-// Put methods for controlling this subsystem
-// here. Call these from Commands.

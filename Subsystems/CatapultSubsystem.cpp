@@ -4,9 +4,13 @@
 CatapultSubsystem::CatapultSubsystem() :
     Subsystem("CatapultSubsystem")
 {
+    printf("forward1Solenoid init\n");
     forward1Solenoid = new Solenoid(CATAPULT_MODULE,CATAPULT_1_FORWARD_CHANNEL); // Prime
+    printf("reverse1Solenoid init\n");
     reverse1Solenoid = new Solenoid(CATAPULT_MODULE,CATAPULT_1_REVERSE_CHANNEL); // Retract
+    printf("forward2Solenoid init\n");
     forward2Solenoid = new Solenoid(CATAPULT_MODULE,CATAPULT_2_FORWARD_CHANNEL); // Lock
+    printf("reverse2Solenoid init\n");
     reverse2Solenoid = new Solenoid(CATAPULT_MODULE,CATAPULT_2_REVERSE_CHANNEL); // Fire
 }
 

@@ -10,18 +10,19 @@ ArmUpCommand::ArmUpCommand()
 // Called just before this Command runs the first time
 void ArmUpCommand::Initialize()
 {
-    if (!SENSOR_GET(digitalin,arm_top)) armsubsystem->Set(-.4);
+    if (SENSOR_GET(digitalin,arm_top)) armsubsystem->Set(-.4);
 }
 
 // Called repeatedly when this Command is scheduled to run
 void ArmUpCommand::Execute()
 {
+    printf("arm execute\n");
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool ArmUpCommand::IsFinished()
 {
-    return SENSOR_GET(digitalin,arm_top);
+    return !SENSOR_GET(digitalin,arm_top);
 }
 
 // Called once after isFinished returns true
