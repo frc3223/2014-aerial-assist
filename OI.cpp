@@ -3,6 +3,7 @@
 #include "Commands/Arm/DownCommand.h"
 #include "Commands/Catapult/FireCommand.h"
 #include "Commands/Drive/BumpCommand.h"
+#include "Commands/Drive/SquareCommand.h"
 
 OI::OI()
 {

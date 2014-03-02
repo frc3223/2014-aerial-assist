@@ -1,5 +1,4 @@
 #include "BumpCommand.h"
-#include <math.h>
 
 /**
  * Runs the drive subsystem with the joysticks.
@@ -23,16 +22,18 @@ void BumpDriveCommand::Execute()
 {
     float speed = SENSOR_GET(joystickbutton,Slow) ? 0.5 : 1;
     float moveY = SENSOR_GET(joystick,main,RightJoyY);
+    float moveYSign = (moveY > 0) - (moveY < 0);
     float moveX = SENSOR_GET(joystick,main,RightJoyX);
-    if (abs(moveY)>0.5) {moveY = copysign(speed,moveY); moveX = 0;}
-    else if (abs(moveX)>0.5) {moveX = copysign(speed,moveY); moveY = 0;};
+    float moveXSign = (moveX > 0) - (moveX < 0);
+    if (abs(moveY)>0.5) {moveY = speed*moveYSign; moveX = 0;}
+    else if (abs(moveX)>0.5) {moveX = speed*moveXSign; moveY = 0;};
     drivemotorsubsystem->ArcadeDrive(moveX,-moveY);
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool BumpDriveCommand::IsFinished()
 {
-    return SENSOR_GET(joystickbutton,);
+    return SENSOR_GET(joystickbutton,Square);
 }
 
 // Called once after isFinished returns true

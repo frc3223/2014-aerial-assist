@@ -3,6 +3,7 @@
 
 #include "../../CommandBase.h"
 #include "../../Robotmagic.h"
+#include <math.h>
 
 /**
  *

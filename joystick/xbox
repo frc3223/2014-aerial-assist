@@ -4,24 +4,26 @@
 // Xbox 360 joystick
 // Buttons are, in order: a, b, x, y, left bumper, right bumper, back, start, left joy, right joy
 //                        1, 2, 3, 4, 5,           6,            7,    8,     9,        10
-#define JOYSTICK_xbox_OI(name) do {                                          \
+#define JOYSTICK_xbox_OI(name) do {                                               \
     joystick_##name##_xbox       = new Joystick(joystick_##name##_STARTPORT);     \
     joystickbutton_Square        = new JoystickButton(joystick_##name##_xbox, 1); \
     joystickbutton_Slow          = new JoystickButton(joystick_##name##_xbox, 2); \
+    joystickbutton_Bump          = new JoystickButton(joystick_##name##_xbox, 4); \
     joystickbutton_ArmDown       = new JoystickButton(joystick_##name##_xbox, 6); \
     joystickbutton_ArmUpOverride = new JoystickButton(joystick_##name##_xbox, 7); \
     joystickbutton_Fire          = new JoystickButton(joystick_##name##_xbox, 8); \
 } while (0)
 
 //  joystickbutton_3             = new JoystickButton(joystick_##name##_xbox, 3);
-//  joystickbutton_4             = new JoystickButton(joystick_##name##_xbox, 4);
 //  joystickbutton_5             = new JoystickButton(joystick_##name##_xbox, 5);
 //  joystickbutton_9             = new JoystickButton(joystick_##name##_xbox, 9);
 //  joystickbutton_0             = new JoystickButton(joystick_##name##_xbox, 10);
 
 // Implement joystick buttons
 #define JOYSTICK_xbox_OI_H(name) Joystick *joystick_##name##_xbox; \
+    JoystickButton *joystickbutton_Square;        \
     JoystickButton *joystickbutton_Slow;          \
+    JoystickButton *joystickbutton_Bump;          \
     JoystickButton *joystickbutton_ArmDown;       \
     JoystickButton *joystickbutton_ArmUpOverride; \
     JoystickButton *joystickbutton_Fire
